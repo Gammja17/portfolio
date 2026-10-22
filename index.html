@@ -7,254 +7,222 @@
 <meta name="description" content="게임 기획자 이서연의 포트폴리오와, 바로 플레이할 수 있는 개인작 모음">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
 :root {
-  --page:#d6ddd8;
-  --green:#1f3a2c; --green-ink:#eaf2ec; --green-sub:#a5bcae;
-  --light:#f4f6f4; --light2:#e8ece9; --ink:#141815; --sub:#5d655f; --line:#d5dbd7;
-  --night:#0d1110; --night2:#171d1a; --night-line:#26302b; --night-sub:#8e9a93;
-  --mint:#8fe0b0; --g:#1e5b3a;
-  --cut:16px;
+  --glow:#8fd3ff; --ink:#eaf6ff; --sub:#9ec3e2;
+  --glass:rgba(160,210,255,.08); --edge:rgba(190,228,255,.32);
 }
 * { box-sizing:border-box; margin:0; padding:0; }
-html { scroll-behavior:smooth; }
-body { background:var(--page); color:var(--ink); font-family:Pretendard,system-ui,sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+html { scroll-behavior:smooth; background:#010712; }
+body { color:var(--ink); font-family:Pretendard,system-ui,sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  background:linear-gradient(180deg, #0a3f7c 0%, #052a5a 14%, #031a3a 34%, #020f25 60%, #010712 100%); min-height:100vh; }
 a { color:inherit; text-decoration:none; }
 img { display:block; max-width:100%; }
 button { font:inherit; }
-.frame { max-width:1200px; margin:40px auto; overflow:hidden; box-shadow:0 30px 80px -40px rgba(20,30,25,.45); }
-.disp { font-family:Anton,Pretendard,sans-serif; font-weight:400; text-transform:uppercase; letter-spacing:.01em; line-height:.95; }
-.small { font-size:12.5px; font-weight:500; line-height:1.55; }
-.cut { clip-path:polygon(0 0,calc(100% - var(--cut)) 0,100% var(--cut),100% 100%,0 100%); }
+.en { font-family:Outfit,Pretendard,sans-serif; }
+.small { font-size:12.5px; font-weight:500; line-height:1.55; color:var(--sub); }
+.wrap { position:relative; z-index:2; max-width:1040px; margin:0 auto; padding:0 28px; }
 
-/* ── hero (dark green) */
-.top { background:var(--green); color:var(--green-ink); }
-.nav { display:flex; align-items:center; justify-content:space-between; padding:26px 48px; }
-.logo { font-family:Anton,sans-serif; font-size:20px; letter-spacing:.02em; }
-.nav .links { display:flex; gap:30px; color:var(--green-sub); }
-.nav .links a:hover { color:var(--green-ink); }
-.nav .mail { font-size:12.5px; font-weight:600; border:1px solid var(--green-sub); border-radius:999px; padding:6px 14px; }
-.nav .mail:hover { background:var(--green-ink); color:var(--green); }
-.intro { text-align:center; padding:36px 48px 30px; }
-.intro .eyebrow { color:var(--mint); font-weight:600; font-size:12.5px; letter-spacing:.02em; }
-.intro h1 { font-size:clamp(26px,3.6vw,40px); font-weight:800; letter-spacing:-0.03em; line-height:1.3; margin:12px auto 10px; }
-.intro h1 span { color:var(--mint); }
-.intro p { color:var(--green-sub); }
-.hero { display:grid; grid-template-columns:1fr 1.4fr; gap:56px; padding:40px 48px 64px; align-items:start; border-top:1px solid rgba(165,188,174,.2); margin:0 48px; padding-left:0; padding-right:0; }
-.hero .who h2 { font-size:clamp(64px,9vw,120px) !important; }
-.wins { list-style:none; border-top:1px solid rgba(165,188,174,.3); }
-.wins li { display:grid; grid-template-columns:72px 1fr auto; gap:12px; align-items:baseline; padding:12px 0; border-bottom:1px solid rgba(165,188,174,.3); }
-.wins b { font-size:17px; font-weight:800; color:var(--mint); }
-.wins span { font-size:14px; font-weight:600; }
-.wins em { font-style:normal; font-size:12.5px; color:var(--green-sub); }
-.hero .who h2 { font-size:76px; margin-bottom:6px; }
-.hero .who .name { font-size:26px; font-weight:800; letter-spacing:-0.02em; color:var(--mint); margin-bottom:24px; }
-.spec { display:grid; grid-template-columns:44px 1fr; row-gap:8px; margin-bottom:24px; color:var(--green-sub); }
-.spec b { font-weight:600; color:var(--green-ink); }
-.cta { display:inline-flex; align-items:center; gap:16px; }
-.oct { width:82px; height:82px; display:grid; place-items:center; position:relative; clip-path:polygon(30% 0,70% 0,100% 30%,100% 70%,70% 100%,30% 100%,0 70%,0 30%); background:var(--green-sub); transition:background .2s; }
-.oct::after { content:""; position:absolute; inset:1px; clip-path:inherit; background:var(--green); transition:background .2s; }
-.oct b { position:relative; z-index:1; font-size:22px; font-weight:400; transform:rotate(-45deg); }
-.cta:hover .oct::after { background:var(--mint); }
-.cta:hover .oct b { color:var(--green); }
-.cta .t { color:var(--green-sub); }
-.cta .t strong { display:block; font-family:Anton,sans-serif; font-weight:400; font-size:26px; color:var(--green-ink); letter-spacing:.02em; }
-.stage { position:relative; aspect-ratio:16/10; overflow:hidden; --cut:22px; }
-.stage img { width:100%; height:100%; object-fit:cover; }
-.stage .cap { position:absolute; left:0; right:0; bottom:0; padding:40px 20px 16px; display:flex; justify-content:space-between; align-items:flex-end; background:linear-gradient(to top, rgba(8,14,11,.85), rgba(8,14,11,0)); }
-.stage .cap h3 { font-size:22px; font-weight:800; letter-spacing:-0.02em; }
-.stage .cap span { color:var(--mint); }
-.rail .small { color:var(--green-sub); margin-bottom:8px; }
-.rail .thumbs { display:flex; flex-direction:column; gap:10px; }
-.rail button { all:unset; cursor:pointer; display:block; aspect-ratio:16/10; overflow:hidden; opacity:.6; transition:opacity .2s; --cut:10px; }
-.rail button:hover { opacity:1; }
-.rail img { width:100%; height:100%; object-fit:cover; }
-.counter { display:flex; align-items:center; gap:10px; margin-top:12px; color:var(--green-sub); font-size:12.5px; font-variant-numeric:tabular-nums; }
-.counter i { flex:1; height:1px; background:rgba(165,188,174,.4); position:relative; }
-.counter i::after { content:""; position:absolute; left:0; top:-1px; height:3px; width:var(--p,20%); background:var(--mint); transition:width .4s; }
+/* ocean atmosphere */
+.sea { position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden; }
+.beam { position:absolute; left:50%; top:-10vh; width:70vw; height:120vh; transform:translateX(-50%);
+  background:conic-gradient(from 180deg at 50% 0%, transparent 160deg, rgba(150,215,255,.18) 172deg, rgba(190,235,255,.32) 180deg, rgba(150,215,255,.18) 188deg, transparent 200deg);
+  filter:blur(18px); opacity:.9; animation:sway 9s ease-in-out infinite alternate; }
+.beam.b2 { width:50vw; opacity:.5; animation-duration:13s; animation-direction:alternate-reverse; }
+@keyframes sway { from { transform:translateX(-52%) rotate(-3deg); } to { transform:translateX(-48%) rotate(3deg); } }
+.caustic { position:absolute; inset:-20%; opacity:.16; mix-blend-mode:screen;
+  background:
+    radial-gradient(ellipse 120px 40px at 20% 30%, #9fe0ff, transparent 70%),
+    radial-gradient(ellipse 160px 50px at 70% 20%, #9fe0ff, transparent 70%),
+    radial-gradient(ellipse 140px 45px at 45% 60%, #9fe0ff, transparent 70%),
+    radial-gradient(ellipse 110px 35px at 85% 70%, #9fe0ff, transparent 70%),
+    radial-gradient(ellipse 130px 40px at 10% 80%, #9fe0ff, transparent 70%);
+  filter:blur(14px); animation:drift 18s linear infinite alternate; }
+@keyframes drift { from { transform:translate(0,0) scale(1); } to { transform:translate(4%,3%) scale(1.08); } }
+.bubble { position:absolute; bottom:-20px; border-radius:50%; border:1px solid rgba(200,235,255,.45); background:radial-gradient(circle at 30% 30%, rgba(255,255,255,.35), rgba(255,255,255,0) 60%); animation:rise linear infinite; }
+@keyframes rise { to { transform:translate(var(--dx), -110vh); opacity:0; } }
+@media (prefers-reduced-motion:reduce) { .beam, .caustic { animation:none; } .bubble { display:none; } }
 
-/* ── section shell */
-.sec { padding:64px 48px 72px; }
-.head { display:grid; grid-template-columns:1fr 220px 220px auto; gap:24px; align-items:end; margin-bottom:34px; }
-.head h2 { font-size:48px; }
-.pill { font-size:12px; font-weight:700; border:1px solid currentColor; border-radius:999px; padding:7px 16px; white-space:nowrap; }
+/* glass */
+.glass { background:var(--glass); border:1px solid var(--edge); border-radius:22px; backdrop-filter:blur(14px) saturate(1.2); -webkit-backdrop-filter:blur(14px) saturate(1.2);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.25), 0 20px 50px -20px rgba(0,10,30,.8); }
 
-/* ── projects (light) */
-.light { background:var(--light); color:var(--ink); }
-.light .small { color:var(--sub); }
-.pgrid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
-.pfeat { grid-column:span 2; grid-row:span 2; display:flex; flex-direction:column; background:var(--ink); color:#fff; --cut:26px; }
-.pfeat .pic { flex:1; min-height:300px; overflow:hidden; }
-.pfeat .pic img { width:100%; height:100%; object-fit:cover; transition:transform .4s; }
-.pfeat:hover .pic img { transform:scale(1.03); }
-.pfeat .txt { padding:20px 22px 22px; display:flex; justify-content:space-between; align-items:flex-end; gap:16px; }
-.pfeat h3 { font-family:Anton,sans-serif; font-weight:400; font-size:32px; text-transform:uppercase; line-height:1; }
-.pfeat .win { color:var(--mint); font-weight:700; font-size:14px; margin-top:8px; }
-.pfeat .small { color:#a9b3ad; margin-top:4px; }
-.pfeat .go { font-size:12.5px; font-weight:700; border:1px solid #fff; border-radius:999px; padding:6px 14px; white-space:nowrap; }
-.pcard .pic { aspect-ratio:16/10; overflow:hidden; background:var(--light2); }
-.pcard .pic img { width:100%; height:100%; object-fit:cover; transition:transform .35s; }
-.pcard:hover .pic img { transform:scale(1.05); }
-.pcard h4 { font-size:15.5px; font-weight:700; letter-spacing:-0.01em; margin-top:12px; }
-.pcard .win { font-size:12.5px; font-weight:700; color:var(--g); margin-top:4px; }
-.pcard .go { display:inline-block; margin-top:6px; font-size:12.5px; font-weight:700; border-bottom:1.5px solid var(--g); }
+/* top + hero */
+.top { display:flex; justify-content:space-between; padding:26px 0; }
+.top nav { display:flex; gap:26px; }
+.top nav a:hover { color:var(--ink); }
+.hero { text-align:center; padding:70px 0 40px; }
+.hero .eyebrow { letter-spacing:.3em; font-size:13px; font-weight:700; color:var(--glow); text-transform:uppercase; }
+.hero h1 { font-size:clamp(64px,13vw,150px); font-weight:800; letter-spacing:-0.04em; line-height:1; margin:14px 0 6px;
+  text-shadow:0 0 40px rgba(143,211,255,.55), 0 0 90px rgba(80,170,255,.35); }
+.hero .lead { font-size:clamp(18px,2.4vw,24px); font-weight:700; letter-spacing:-0.02em; margin-top:18px; }
+.hero .lead span { color:var(--glow); }
+.hero p.small { margin-top:10px; }
+.down { display:inline-grid; place-items:center; width:54px; height:54px; border-radius:50%; margin-top:34px; font-size:20px; transition:transform .2s; }
+.down:hover { transform:translateY(4px); }
 
-/* ── play zone (night) */
-.night { background:var(--night); color:#eef2ef; }
-.night .small { color:var(--night-sub); }
-.feature { display:grid; grid-template-columns:1.55fr 1fr; gap:16px; margin-bottom:40px; }
-.big { position:relative; overflow:hidden; --cut:28px; min-height:360px; }
-.big img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform .5s; }
-.big:hover img { transform:scale(1.03); }
-.big .over { position:absolute; inset:auto 0 0 0; padding:70px 26px 24px; background:linear-gradient(to top, rgba(6,9,8,.95) 20%, rgba(6,9,8,0)); }
-.badge { display:inline-block; font-size:11.5px; font-weight:700; color:var(--night); background:var(--mint); padding:3px 9px; border-radius:3px; }
-.big h3 { font-family:Anton,sans-serif; font-weight:400; font-size:44px; text-transform:uppercase; line-height:1; margin:12px 0 8px; }
-.big p { color:#c3ccc6; font-size:14.5px; max-width:420px; }
-.playbtn { display:inline-flex; align-items:center; gap:8px; margin-top:16px; font-size:13.5px; font-weight:700; color:var(--night); background:#fff; padding:10px 18px; border-radius:999px; transition:background .2s; }
-.big:hover .playbtn { background:var(--mint); }
-.stack { display:grid; grid-template-rows:1fr 1fr; gap:16px; }
-.mid { position:relative; overflow:hidden; --cut:18px; }
-.mid img { width:100%; height:100%; object-fit:cover; transition:transform .5s; }
-.mid:hover img { transform:scale(1.04); }
-.mid .over { position:absolute; inset:auto 0 0 0; padding:40px 18px 14px; display:flex; justify-content:space-between; align-items:flex-end; background:linear-gradient(to top, rgba(6,9,8,.92), rgba(6,9,8,0)); }
-.mid h4 { font-size:19px; font-weight:800; letter-spacing:-0.02em; }
-.mid .small { color:#b3bdb7; }
-.mid .arrow { font-size:18px; color:var(--mint); }
-.libbar { display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; border-top:1px solid var(--night-line); padding-top:22px; margin-bottom:22px; }
-.libbar h3 { font-size:17px; font-weight:800; letter-spacing:-0.01em; }
-.chips { display:flex; gap:8px; flex-wrap:wrap; }
-.chips button { cursor:pointer; font-size:12.5px; font-weight:600; color:var(--night-sub); background:var(--night2); border:1px solid var(--night-line); border-radius:999px; padding:6px 14px; transition:.15s; }
-.chips button:hover { color:#fff; }
-.chips button.on { color:var(--night); background:var(--mint); border-color:var(--mint); }
-.lib { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
-.gcard { display:block; background:var(--night2); transition:transform .2s, background .2s; --cut:14px; }
-.gcard:hover { transform:translateY(-4px); background:#1e2622; }
-.gcard .pic { aspect-ratio:16/9; overflow:hidden; }
+/* awards panel */
+.label { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+.tag { font-size:11.5px; font-weight:700; color:#03224a; background:var(--ink); border-radius:999px; padding:2px 10px; }
+.awards { position:relative; overflow:hidden; padding:34px 24px 30px; display:grid; grid-template-columns:repeat(4,1fr); gap:10px; text-align:center; isolation:isolate; }
+.awards::before { content:""; position:absolute; inset:0; background:url(img/doppel_play.jpg) center/cover; opacity:.2; filter:saturate(.5); z-index:-1; }
+.awards .no { font-size:clamp(34px,5vw,52px); font-weight:700; line-height:1; text-shadow:0 0 24px rgba(143,211,255,.5); }
+.awards b { display:block; font-size:16px; font-weight:800; margin-top:10px; color:var(--glow); }
+.awards span { display:block; font-size:13px; font-weight:600; margin-top:4px; }
+.awards em { display:block; font-style:normal; font-size:12px; color:var(--sub); margin-top:2px; }
+.edition { text-align:right; margin-top:8px; }
+
+/* section titles */
+.sec { padding:110px 0 30px; }
+.title { text-align:center; margin-bottom:46px; }
+.title h2 { font-size:clamp(40px,6.5vw,68px); font-weight:800; letter-spacing:-0.03em; line-height:1; text-shadow:0 0 34px rgba(143,211,255,.35); }
+.title .sub { font-size:clamp(18px,2.2vw,24px); font-weight:600; margin-top:6px; }
+.title p.small { margin-top:10px; }
+
+/* project cards (stacked glass) */
+.cards { display:grid; grid-template-columns:repeat(3,1fr); gap:34px 28px; }
+.cards.two { grid-template-columns:repeat(2,minmax(0,330px)); justify-content:center; margin-top:34px; }
+.card { position:relative; display:block; }
+.card::before { content:""; position:absolute; inset:0; border-radius:22px; border:1px solid var(--edge); background:rgba(160,210,255,.05); transform:translate(10px,-10px) rotate(4deg); z-index:-1; transition:transform .3s; }
+.card:hover::before { transform:translate(16px,-14px) rotate(7deg); }
+.card .glass { overflow:hidden; padding:10px; transition:transform .3s; }
+.card:hover .glass { transform:translateY(-4px); }
+.card .pic { position:relative; border-radius:14px; overflow:hidden; aspect-ratio:16/11; }
+.card .pic img { width:100%; height:100%; object-fit:cover; }
+.card .pic::after { content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(2,20,45,.85), rgba(2,20,45,0) 60%); }
+.card .over { position:absolute; left:22px; right:22px; bottom:20px; z-index:1; text-align:center; }
+.card h3 { font-size:21px; font-weight:800; letter-spacing:-0.02em; text-shadow:0 2px 14px rgba(0,0,0,.6); }
+.card .win { font-size:12.5px; font-weight:700; color:var(--glow); margin-top:2px; }
+.card .meta { padding:12px 8px 6px; display:flex; justify-content:space-between; align-items:center; }
+.card .num { font-size:13px; font-weight:700; color:var(--glow); }
+
+/* play zone */
+.feat { display:grid; grid-template-columns:1.5fr 1fr; gap:22px; margin-bottom:40px; }
+.big, .mini { position:relative; display:block; overflow:hidden; padding:10px; }
+.big .pic, .mini .pic { border-radius:14px; overflow:hidden; height:100%; }
+.big .pic img, .mini .pic img { width:100%; height:100%; object-fit:cover; transition:transform .5s; }
+.big:hover img, .mini:hover img { transform:scale(1.04); }
+.big { min-height:380px; }
+.big .over, .mini .over { position:absolute; left:10px; right:10px; bottom:10px; padding:60px 22px 20px; border-radius:0 0 14px 14px; background:linear-gradient(to top, rgba(2,18,40,.92), rgba(2,18,40,0)); }
+.big h3 { font-size:36px; font-weight:800; letter-spacing:-0.02em; line-height:1; margin:10px 0 6px; }
+.big p { font-size:14px; color:var(--sub); max-width:400px; }
+.play { display:inline-block; margin-top:14px; font-size:13px; font-weight:800; color:#03224a; background:var(--ink); border-radius:999px; padding:9px 20px; box-shadow:0 0 24px rgba(143,211,255,.5); }
+.stack { display:grid; grid-template-rows:1fr 1fr; gap:22px; }
+.mini .over { padding:40px 18px 14px; }
+.mini h4 { font-size:18px; font-weight:800; }
+.chips { display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin-bottom:24px; }
+.chips button { cursor:pointer; font-size:12.5px; font-weight:700; color:var(--sub); padding:7px 16px; border-radius:999px; background:var(--glass); border:1px solid var(--edge); transition:.15s; }
+.chips button:hover { color:var(--ink); }
+.chips button.on { color:#03224a; background:var(--ink); }
+.lib { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+.gcard { display:block; padding:8px; border-radius:18px; transition:transform .2s; }
+.gcard:hover { transform:translateY(-5px); }
+.gcard .pic { border-radius:12px; overflow:hidden; aspect-ratio:16/10; }
 .gcard .pic img { width:100%; height:100%; object-fit:cover; }
-.gcard .body { padding:12px 14px 14px; }
-.gcard .row { display:flex; justify-content:space-between; align-items:baseline; gap:8px; }
-.gcard h4 { font-size:15px; font-weight:700; }
-.gcard .no { font-size:11.5px; color:#56635c; font-variant-numeric:tabular-nums; }
-.gcard .tags { display:flex; gap:6px; margin-top:8px; }
-.gcard .tags span { font-size:11.5px; font-weight:600; color:var(--night-sub); border:1px solid var(--night-line); border-radius:3px; padding:1px 7px; }
-.gcard .tags span:first-child { color:var(--mint); border-color:rgba(143,224,176,.35); }
+.gcard .b { padding:10px 6px 4px; display:flex; justify-content:space-between; align-items:baseline; gap:6px; }
+.gcard h4 { font-size:14.5px; font-weight:700; }
+.gcard .g { font-size:11.5px; font-weight:700; color:var(--glow); white-space:nowrap; }
 .gcard.hide { display:none; }
-.night .note { margin-top:22px; }
+.note { text-align:center; margin-top:22px; }
 
-/* ── team (light grey) */
-.grey { background:var(--light2); color:var(--ink); }
-.grey .small { color:var(--sub); }
-.tgrid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
-.tcard .pic { aspect-ratio:16/10; overflow:hidden; }
-.tcard .pic img { width:100%; height:100%; object-fit:cover; transition:transform .35s; }
-.tcard:hover .pic img { transform:scale(1.05); }
-.tcard h4 { font-size:15px; font-weight:700; margin-top:12px; }
-.tcard .go { display:inline-block; margin-top:6px; font-size:12.5px; font-weight:700; border-bottom:1.5px solid var(--g); }
+/* team builds (round portraits) */
+.crew { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; text-align:center; }
+.crew a { display:block; }
+.crew .ring { width:100%; max-width:220px; aspect-ratio:16/10; margin:0 auto; border-radius:20px; padding:5px; background:linear-gradient(160deg, rgba(220,242,255,.9), rgba(120,190,255,.25)); box-shadow:0 0 30px rgba(143,211,255,.35); transition:transform .25s; }
+.crew a:hover .ring { transform:scale(1.05); }
+.crew .ring img { width:100%; height:100%; object-fit:cover; border-radius:15px; }
+.crew h4 { font-size:15px; font-weight:800; margin-top:14px; }
+.crew .small { margin-top:2px; }
+.crew .enter { display:inline-block; margin-top:8px; font-size:11.5px; font-weight:700; padding:4px 14px; border-radius:999px; }
+.split { display:flex; justify-content:space-between; margin-bottom:30px; }
 
-/* ── closing (dark green) */
-.band { background:var(--green); color:var(--green-ink); padding:76px 48px 30px; }
-.band .grid { display:grid; grid-template-columns:1fr auto; gap:32px; align-items:end; }
-.band h2 { font-size:clamp(46px,7vw,84px); }
-.band h2 span { color:var(--mint); }
-.band .side { text-align:right; color:var(--green-sub); }
-.band .side a { display:inline-block; margin-top:8px; color:var(--green-ink); font-weight:700; border-bottom:1.5px solid var(--mint); }
-.legal { display:flex; justify-content:space-between; margin-top:56px; padding-top:18px; border-top:1px solid rgba(165,188,174,.25); color:var(--green-sub); }
+/* closing */
+.end { text-align:center; padding:130px 0 70px; }
+.end h2 { font-size:clamp(40px,7vw,72px); font-weight:800; letter-spacing:-0.03em; line-height:1; text-shadow:0 0 34px rgba(143,211,255,.4); }
+.end .sub { font-size:clamp(20px,2.6vw,28px); font-weight:700; margin-top:6px; }
+.end a.mail { display:inline-block; margin-top:22px; font-size:15px; font-weight:700; padding:12px 28px; border-radius:999px; }
+.dots { display:flex; justify-content:center; gap:10px; margin-top:40px; }
+.dots i { width:9px; height:9px; border-radius:50%; background:var(--ink); opacity:.4; }
+.dots i:nth-child(2) { opacity:.9; box-shadow:0 0 12px var(--glow); }
+.foot { display:flex; justify-content:space-between; padding:20px 0 34px; border-top:1px solid rgba(190,228,255,.15); }
 
-@media (max-width:980px) {
-  .frame { margin:0; }
-  .nav, .intro, .hero, .sec, .band { padding-left:22px; padding-right:22px; }
-  .nav .links { display:none; }
-  .hero { grid-template-columns:1fr; gap:28px; margin:0 22px; }
-  .rail .thumbs { flex-direction:row; }
-  .rail button { flex:1; }
-  .head { grid-template-columns:1fr auto; }
-  .head .hide { display:none; }
-  .pgrid, .lib, .tgrid { grid-template-columns:repeat(2,1fr); }
-  .feature { grid-template-columns:1fr; }
+@media (max-width:860px) {
+  .top nav { display:none; }
+  .awards { grid-template-columns:repeat(2,1fr); row-gap:26px; }
+  .cards, .cards.two { grid-template-columns:repeat(2,1fr); }
+  .feat { grid-template-columns:1fr; }
   .stack { grid-template-rows:none; grid-template-columns:1fr 1fr; }
-  .band .grid { grid-template-columns:1fr; }
-  .band .side { text-align:left; }
+  .lib { grid-template-columns:repeat(2,1fr); }
+  .crew { grid-template-columns:repeat(2,1fr); row-gap:36px; }
 }
-@media (max-width:560px) {
-  .pgrid, .lib, .tgrid, .stack { grid-template-columns:1fr; }
-  .pfeat { grid-column:auto; grid-row:auto; }
-  .hero .who h2 { font-size:56px; }
-  .big h3 { font-size:34px; }
+@media (max-width:540px) {
+  .cards, .cards.two, .stack, .lib { grid-template-columns:1fr; }
+  .card::before { display:none; }
 }
 </style>
 </head>
 <body>
-<div class="frame">
+<div class="sea" aria-hidden="true"><div class="beam"></div><div class="beam b2"></div><div class="caustic"></div><div id="bubbles"></div></div>
 
-  <div class="top">
-    <div class="nav">
-      <div class="logo">SEOYEON.</div>
-      <div class="links small"><a href="#projects">프로젝트</a><a href="#play">플레이 존</a><a href="#team">팀 빌드</a><a href="#contact">연락처</a></div>
-      <a class="mail" href="mailto:kazu809ha@gmail.com">메일 보내기</a>
-    </div>
-    <div class="intro">
-      <div class="eyebrow">Game Design Portfolio 2026</div>
-      <h1>재미는 직접 해봐야 <span>안다고 믿는</span> 기획자, 이서연입니다.</h1>
-      <p class="small">기획서는 플레이테스트로 검증하고, 떠오른 재미는 하루 만에 플레이할 수 있게 만들어 봅니다.</p>
-    </div>
-    <div class="hero">
-      <div class="facts-l">
-        <div class="spec small"><span>역할</span><b>기획, 개발, PM</b><span>소속</span><b>이화여대 컴퓨터공학, 게임 제작 동아리 KING</b></div>
-        <a class="cta" href="#play"><span class="oct"><b>→</b></span><span class="t small">바로 플레이<strong>11 Games</strong></span></a>
-      </div>
-      <div class="facts">
-        <ul class="wins">
-          <li><b>대상</b><span>NHN 게임 x AI 해커톤</span><em>588팀 중 1위, 2026</em></li>
-          <li><b>우수상</b><span>서울 플레이업 AI 게임 챌린지</span><em>353팀 중 3위, 2026</em></li>
-          <li><b>비전상</b><span>KRAFTON KDCW Game Pitch</span><em>2위, 2025</em></li>
-          <li><b>장려상</b><span>Nexon Dream Members</span><em>2024, 2025</em></li>
-        </ul>
-      </div>
-    </div>
+<div class="wrap">
+  <div class="top small"><span>Game Design Portfolio</span><nav><a href="#projects">프로젝트</a><a href="#play">플레이 존</a><a href="#team">팀 빌드</a><a href="#contact">연락처</a></nav><span>2026</span></div>
+
+  <div class="hero">
+    <div class="eyebrow en">Lee Seoyeon</div>
+    <h1>이서연</h1>
+    <div class="lead">재미는 직접 해봐야 <span>안다고 믿는</span> 기획자</div>
+    <p class="small">기획서는 플레이테스트로 검증하고, 떠오른 재미는 하루 만에 플레이할 수 있게 만들어 봅니다.<br>이화여대 컴퓨터공학과, 게임 제작 동아리 KING</p>
+    <a class="down glass" href="#awards" aria-label="아래로">↓</a>
   </div>
 
-  <div class="sec light" id="projects">
-    <div class="head">
-      <h2 class="disp">Projects</h2>
-      <div class="small hide">기획을 맡은 팀 프로젝트<br>2024 ~ 2026</div>
-      <div class="small hide">해커톤 대상, 공모전 우수상<br>크래프톤 KDCW 비전상</div>
-      <span class="pill">5 Works</span>
+  <div id="awards">
+    <div class="label small">수상 <span class="tag">Awards</span></div>
+    <div class="awards glass">
+      <div><div class="no en">01</div><b>대상</b><span>NHN 게임 x AI 해커톤</span><em>588팀 중 1위, 2026</em></div>
+      <div><div class="no en">02</div><b>우수상</b><span>서울 플레이업 AI 게임 챌린지</span><em>353팀 중 3위, 2026</em></div>
+      <div><div class="no en">03</div><b>비전상</b><span>KRAFTON KDCW Game Pitch</span><em>2위, 2025</em></div>
+      <div><div class="no en">04</div><b>장려상</b><span>Nexon Dream Members</span><em>2024, 2025</em></div>
     </div>
-    <div class="pgrid" id="projGrid"></div>
+    <div class="edition small">역할 기획, 개발, PM</div>
   </div>
 
-  <div class="sec night" id="play">
-    <div class="head">
-      <h2 class="disp">Play Zone</h2>
-      <div class="small hide">AI와 함께 만든 개인작<br>브라우저에서 바로 실행</div>
-      <div class="small hide">재미를 한 줄로 정하고<br>하루 이틀 만에 만든 게임들</div>
-      <span class="pill">11 Games</span>
+  <div class="sec" id="projects">
+    <div class="title">
+      <h2 class="en">PROJECTS.</h2>
+      <div class="sub">기획을 맡은 팀 프로젝트</div>
+      <p class="small">해커톤과 공모전, 동아리에서 팀으로 만든 다섯 개의 게임</p>
     </div>
-    <div class="feature" id="feature"></div>
-    <div class="libbar"><h3>라이브러리</h3><div class="chips" id="chips"></div></div>
+    <div class="cards" id="cardsA"></div>
+    <div class="cards two" id="cardsB"></div>
+  </div>
+
+  <div class="sec" id="play">
+    <div class="title">
+      <h2 class="en">PLAY ZONE.</h2>
+      <div class="sub">바로 해보는 개인작</div>
+      <p class="small">재미를 한 줄로 정하고, AI와 함께 하루 이틀 만에 만든 게임들. 누르면 새 탭에서 실행됩니다.</p>
+    </div>
+    <div class="feat" id="feat"></div>
+    <div class="chips" id="chips"></div>
     <div class="lib" id="lib"></div>
     <p class="small note">PC의 Chrome에서 가장 잘 돌아갑니다. 3D 게임은 첫 로딩에 몇 초 걸릴 수 있어요.</p>
   </div>
 
-  <div class="sec grey" id="team">
-    <div class="head">
-      <h2 class="disp">Team Builds</h2>
-      <div class="small hide">동아리와 공모전에서<br>팀으로 만든 게임</div>
-      <div class="small hide">웹 빌드와<br>실행 파일</div>
-      <span class="pill">4 Builds</span>
-    </div>
-    <div class="tgrid" id="teamGrid"></div>
+  <div class="sec" id="team">
+    <div class="split small"><span>팀 빌드</span><span>2024 ~ 2026</span></div>
+    <div class="crew" id="crew"></div>
   </div>
 
-  <div class="band" id="contact">
-    <div class="grid">
-      <h2 class="disp">Made to play.<br>Tested by players.<br><span>Built with the team.</span></h2>
-      <div class="side small">같이 재미있는 게임을<br>만들고 싶습니다<br><a href="mailto:kazu809ha@gmail.com">kazu809ha@gmail.com</a></div>
-    </div>
-    <div class="legal small"><span>© 2026 Lee Seoyeon</span><a href="https://github.com/Gammja17" target="_blank" rel="noopener">github.com/Gammja17</a></div>
+  <div class="end" id="contact">
+    <h2 class="en">LET'S DIVE IN.</h2>
+    <div class="sub">같이 만들어요</div>
+    <p class="small" style="margin-top:10px">재미있는 게임을 함께 만들 팀을 찾고 있습니다.</p>
+    <a class="mail glass" href="mailto:kazu809ha@gmail.com">kazu809ha@gmail.com</a>
+    <div class="dots"><i></i><i></i><i></i></div>
   </div>
+  <div class="foot small"><span>© 2026 Lee Seoyeon</span><a href="https://github.com/Gammja17" target="_blank" rel="noopener">github.com/Gammja17</a></div>
 </div>
 
 <script>
@@ -263,11 +231,11 @@ const ext = 'target="_blank" rel="noopener"';
 const esc = s => s.replace(/[&<>"]/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" })[c]);
 
 const projects = [
-  { img:"doppel_play", stage:"doppel_play2", t:"도플갱어", en:"Doppelganger", meta:"2026, 48시간, 2인", role:"기획, 개발", win:"NHN 게임 x AI 해커톤 대상", d:"AI 아군 둘을 채팅과 음성으로 지휘하는 실시간 턴제 거점 점령 게임", url:"https://github.com/SeoYuGi/SeoYuGi", go:"GitHub" },
-  { img:"buildrangers", t:"건축레인저 : 서울", meta:"2026, 4개월, 5인", role:"팀장, 기획", win:"플레이업 AI 게임 챌린지 우수상", url:"https://youtu.be/qdNikbb2yj0", go:"플레이 영상" },
-  { img:"bishoujo", t:"잠깐! 미소녀들이…", meta:"2025, 9인", role:"기획, 그래픽", win:"KDCW 2025 비전상", url:"https://youtu.be/aivYL7OcErE", go:"플레이 영상" },
-  { img:"rkkago", t:"RKKAGO", meta:"2026, 5인", role:"스킬, 시스템 기획", win:"NDM 시연회 출품", url:"https://youtu.be/Km3clBIjL4Q", go:"플레이 영상" },
-  { img:"idol", t:"아이돌 : 성대결절 주의보", meta:"2025, 2주, 6인", role:"PM, 메인 기획", win:"", url:"https://www.youtube.com/watch?v=0A3nexRDdNc", go:"시연 영상" },
+  { img:"doppel_play", t:"도플갱어", win:"NHN 해커톤 대상", meta:"2026, 기획, 개발", url:"https://github.com/SeoYuGi/SeoYuGi" },
+  { img:"buildrangers", t:"건축레인저 : 서울", win:"플레이업 우수상", meta:"2026, 팀장, 기획", url:"https://youtu.be/qdNikbb2yj0" },
+  { img:"bishoujo", t:"잠깐! 미소녀들이…", win:"KDCW 비전상", meta:"2025, 기획, 그래픽", url:"https://youtu.be/aivYL7OcErE" },
+  { img:"rkkago", t:"RKKAGO", win:"NDM 시연회 출품", meta:"2026, 스킬, 시스템 기획", url:"https://youtu.be/Km3clBIjL4Q" },
+  { img:"idol", t:"아이돌 : 성대결절 주의보", win:"2주 만에 완성", meta:"2025, PM, 메인 기획", url:"https://www.youtube.com/watch?v=0A3nexRDdNc" },
 ];
 const featured = [
   { img:"override", t:"OVERRIDE", d:"캡슐을 깨고 기체를 합치는 세로형 머지 디펜스. 가장 오래 다듬은 개인작입니다.", url:GH+"merge-defense/" },
@@ -275,50 +243,57 @@ const featured = [
   { img:"minwon", t:"민원실 3번 창구", d:"서류 대조 공무원 게임", url:GH+"Minwon3/" },
 ];
 const library = [
-  { img:"beatchef", t:"BEATCHEF", g:"리듬", eng:"Unity", url:GH+"BeatChef/" },
-  { img:"claw", t:"인형뽑기 시뮬레이터", g:"경영", eng:"Web", url:GH+"claw-tycoon/" },
-  { img:"stoop", t:"STOOP", g:"시뮬레이션", eng:"Godot", url:GH+"stoop/" },
-  { img:"dragonia", t:"DRAGONIA", g:"액션", eng:"Godot", url:GH+"DragoniaGodot/" },
-  { img:"smokebuster", t:"물대포 단속반", g:"액션", eng:"Web", url:GH+"SmokeBuster/" },
-  { img:"baddies", t:"2 BADDIES", g:"협동", eng:"Web", url:GH+"TwoBaddies/" },
-  { img:"castaway", t:"무인도 버디즈", g:"협동", eng:"Godot", url:GH+"CastawayBuddies/" },
-  { img:"swordduel", t:"진검승부", g:"액션", eng:"Godot", url:GH+"SwordDuel/" },
+  { img:"beatchef", t:"BEATCHEF", g:"리듬", url:GH+"BeatChef/" },
+  { img:"claw", t:"인형뽑기 시뮬레이터", g:"경영", url:GH+"claw-tycoon/" },
+  { img:"stoop", t:"STOOP", g:"시뮬레이션", url:GH+"stoop/" },
+  { img:"dragonia", t:"DRAGONIA", g:"액션", url:GH+"DragoniaGodot/" },
+  { img:"smokebuster", t:"물대포 단속반", g:"액션", url:GH+"SmokeBuster/" },
+  { img:"baddies", t:"2 BADDIES", g:"협동", url:GH+"TwoBaddies/" },
+  { img:"castaway", t:"무인도 버디즈", g:"협동", url:GH+"CastawayBuddies/" },
+  { img:"swordduel", t:"진검승부", g:"액션", url:GH+"SwordDuel/" },
 ];
 const team = [
   { img:"buildrangers", t:"건축레인저 : 서울", d:"Windows, macOS, Android", url:"https://seoul-zikimi.github.io/build-rangers/", go:"다운로드" },
-  { img:"kumi", t:"KUMI : The Nine Tails", d:"2D 플랫포머 액션", url:"https://teammygummy.github.io/KUMI_TheNineTails/", go:"웹 플레이" },
+  { img:"kumi", t:"KUMI", d:"2D 플랫포머 액션", url:"https://teammygummy.github.io/KUMI_TheNineTails/", go:"웹 플레이" },
   { img:"muzik", t:"MUZIK IS MY LIFE", d:"멀티엔딩 시뮬레이션", url:"https://teammuzik.github.io/MuzikIsMyLife-WebBuild/", go:"웹 플레이" },
-  { img:"tetrhythm", t:"Tetrhythm", d:"테트리스와 리듬게임", url:"https://dasoya.itch.io/tetrhythm", go:"PC 다운로드" },
+  { img:"tetrhythm", t:"Tetrhythm", d:"테트리스와 리듬게임", url:"https://dasoya.itch.io/tetrhythm", go:"다운로드" },
 ];
 
-// projects
-const p0 = projects[0];
-document.getElementById("projGrid").innerHTML =
-  `<a class="pfeat cut" href="${p0.url}" ${ext}><div class="pic"><img src="img/${p0.img}.jpg" alt="${esc(p0.t)} 플레이 화면"></div>
-   <div class="txt"><div><h3>${p0.en}</h3><div class="win">${esc(p0.win)}</div><div class="small">${esc(p0.d)}</div></div><span class="go">${p0.go} ↗</span></div></a>` +
-  projects.slice(1).map(p => `<a class="pcard" href="${p.url}" ${ext}><div class="pic cut"><img src="img/${p.img}.jpg" alt="${esc(p.t)}" loading="lazy"></div>
-   <h4>${esc(p.t)}</h4><div class="small">${esc(p.meta)}, ${esc(p.role)}</div>${p.win ? `<div class="win">${esc(p.win)}</div>` : ""}<span class="go">${p.go} ↗</span></a>`).join("");
+const card = (p, i) => `<a class="card" href="${p.url}" ${ext}><div class="glass"><div class="pic"><img src="img/${p.img}.jpg" alt="${esc(p.t)}" loading="lazy">
+  <div class="over"><h3>${esc(p.t)}</h3><div class="win">${esc(p.win)}</div></div></div>
+  <div class="meta small"><span>${esc(p.meta)}</span><span class="num en">0${i + 1}</span></div></div></a>`;
+document.getElementById("cardsA").innerHTML = projects.slice(0, 3).map(card).join("");
+document.getElementById("cardsB").innerHTML = projects.slice(3).map((p, i) => card(p, i + 3)).join("");
 
-// play zone
-const f = featured;
-document.getElementById("feature").innerHTML =
-  `<a class="big cut" href="${f[0].url}" ${ext}><img src="img/${f[0].img}.jpg" alt="${esc(f[0].t)} 플레이 화면"><div class="over"><span class="badge">대표작</span><h3>${f[0].t}</h3><p>${esc(f[0].d)}</p><span class="playbtn">▶ 플레이</span></div></a>
-   <div class="stack">${f.slice(1).map(g => `<a class="mid cut" href="${g.url}" ${ext}><img src="img/${g.img}.jpg" alt="${esc(g.t)} 플레이 화면" loading="lazy"><div class="over"><div><h4>${esc(g.t)}</h4><div class="small">${esc(g.d)}</div></div><span class="arrow">▶</span></div></a>`).join("")}</div>`;
+const [f0, ...fs] = featured;
+document.getElementById("feat").innerHTML =
+  `<a class="big glass" href="${f0.url}" ${ext}><div class="pic"><img src="img/${f0.img}.jpg" alt="${esc(f0.t)} 플레이 화면"></div>
+   <div class="over"><span class="tag">대표작</span><h3 class="en">${f0.t}</h3><p>${esc(f0.d)}</p><span class="play">▶ 플레이</span></div></a>
+   <div class="stack">${fs.map(g => `<a class="mini glass" href="${g.url}" ${ext}><div class="pic"><img src="img/${g.img}.jpg" alt="${esc(g.t)} 플레이 화면" loading="lazy"></div>
+   <div class="over"><h4>${esc(g.t)}</h4><div class="small">${esc(g.d)}</div></div></a>`).join("")}</div>`;
+
 const lib = document.getElementById("lib");
-lib.innerHTML = library.map((g, i) => `<a class="gcard cut" data-g="${g.g}" href="${g.url}" ${ext}><div class="pic"><img src="img/${g.img}.jpg" alt="${esc(g.t)} 플레이 화면" loading="lazy"></div>
-  <div class="body"><div class="row"><h4>${esc(g.t)}</h4><span class="no">${String(i + 4).padStart(2, "0")}</span></div><div class="tags"><span>${g.g}</span><span>${g.eng}</span></div></div></a>`).join("");
-const genres = ["전체", ...new Set(library.map(g => g.g))];
+lib.innerHTML = library.map(g => `<a class="gcard glass" data-g="${g.g}" href="${g.url}" ${ext}><div class="pic"><img src="img/${g.img}.jpg" alt="${esc(g.t)} 플레이 화면" loading="lazy"></div>
+  <div class="b"><h4>${esc(g.t)}</h4><span class="g">${g.g}</span></div></a>`).join("");
 const chips = document.getElementById("chips");
-chips.innerHTML = genres.map((g, i) => `<button type="button" class="${i ? "" : "on"}">${g}</button>`).join("");
+chips.innerHTML = ["전체", ...new Set(library.map(g => g.g))].map((g, i) => `<button type="button" class="${i ? "" : "on"}">${g}</button>`).join("");
 chips.addEventListener("click", e => {
   const b = e.target.closest("button"); if (!b) return;
   [...chips.children].forEach(x => x.classList.toggle("on", x === b));
   [...lib.children].forEach(c => c.classList.toggle("hide", b.textContent !== "전체" && c.dataset.g !== b.textContent));
 });
 
-// team
-document.getElementById("teamGrid").innerHTML = team.map(g => `<a class="tcard" href="${g.url}" ${ext}><div class="pic cut"><img src="img/${g.img}.jpg" alt="${esc(g.t)}" loading="lazy"></div><h4>${esc(g.t)}</h4><div class="small">${esc(g.d)}</div><span class="go">${g.go} ↗</span></a>`).join("");
+document.getElementById("crew").innerHTML = team.map(g => `<a href="${g.url}" ${ext}><div class="ring"><img src="img/${g.img}.jpg" alt="${esc(g.t)}" loading="lazy"></div>
+  <h4>${esc(g.t)}</h4><div class="small">${esc(g.d)}</div><span class="enter glass">${g.go}</span></a>`).join("");
 
+// rising bubbles
+const bubbles = document.getElementById("bubbles");
+for (let i = 0; i < 26; i++) {
+  const b = document.createElement("span"), s = 4 + Math.random() * 14;
+  b.className = "bubble";
+  b.style.cssText = `left:${Math.random() * 100}%;width:${s}px;height:${s}px;animation-duration:${14 + Math.random() * 18}s;animation-delay:${-Math.random() * 30}s;--dx:${(Math.random() - .5) * 120}px;opacity:${.25 + Math.random() * .5}`;
+  bubbles.appendChild(b);
+}
 </script>
 </body>
 </html>
