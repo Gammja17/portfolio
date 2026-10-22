@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>이서연 게임 기획 포트폴리오</title>
+<meta name="description" content="게임 기획자 이서연의 포트폴리오와, 바로 플레이할 수 있는 개인작 모음">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root { --ink:#151816; --sub:#5a605c; --mute:#9aa09c; --line:#e2e5e3; --g:#1e5b3a; --gl:#7fd1a0; --dark:#111412; --dark2:#1b201d; }
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body { font-family:Pretendard,system-ui,sans-serif; color:var(--ink); background:#fff; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+a { color:inherit; text-decoration:none; }
+img { display:block; max-width:100%; }
+.wrap { max-width:1120px; margin:0 auto; padding:0 28px; }
+
+.top { display:flex; justify-content:space-between; align-items:center; padding:26px 0; font-size:14px; }
+.top b { font-weight:700; letter-spacing:-0.01em; }
+.top nav a { color:var(--sub); margin-left:24px; }
+.top nav a:hover { color:var(--ink); }
+
+.hero { padding:84px 0 96px; }
+.hero h1 { font-size:clamp(40px,7vw,76px); font-weight:800; letter-spacing:-0.035em; line-height:1.05; }
+.hero h1 span { color:var(--g); }
+.hero .intro { max-width:560px; margin-top:26px; font-size:17px; color:var(--sub); }
+.hero .intro strong { color:var(--ink); font-weight:600; }
+.wins { display:flex; flex-wrap:wrap; gap:0; margin-top:56px; border-top:1.5px solid var(--ink); }
+.wins div { flex:1 1 240px; padding:18px 20px 4px 0; }
+.wins b { display:block; font-size:24px; font-weight:800; color:var(--g); letter-spacing:-0.02em; }
+.wins span { display:block; font-size:14px; font-weight:600; margin-top:2px; }
+.wins small { font-size:13px; color:var(--mute); }
+
+.sec { display:grid; grid-template-columns:220px 1fr; gap:40px; padding:72px 0; border-top:1px solid var(--line); }
+.sec h2 { font-size:22px; font-weight:800; letter-spacing:-0.02em; position:sticky; top:28px; align-self:start; }
+.sec h2 small { display:block; font-size:13px; font-weight:500; color:var(--mute); margin-top:6px; letter-spacing:0; }
+
+.row { display:grid; grid-template-columns:260px 1fr; gap:28px; padding:0 0 32px; margin-bottom:32px; border-bottom:1px solid var(--line); }
+.row:last-child { border-bottom:0; margin-bottom:0; }
+.row img { width:100%; aspect-ratio:16/10; object-fit:cover; border-radius:4px; }
+.row .when { font-size:13px; color:var(--mute); font-variant-numeric:tabular-nums; }
+.row h3 { font-size:21px; font-weight:800; letter-spacing:-0.02em; margin:2px 0 6px; }
+.row p { font-size:15px; color:var(--sub); }
+.row .win { display:inline-block; margin-top:10px; font-size:14px; font-weight:700; color:var(--g); }
+.row .links { margin-top:10px; font-size:14px; }
+.row .links a { margin-right:16px; color:var(--ink); font-weight:600; border-bottom:1.5px solid var(--g); }
+
+.zone { background:var(--dark); color:#e9ece9; padding:88px 0 96px; }
+.zone .head { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:36px; }
+.zone h2 { font-size:clamp(30px,4.5vw,44px); font-weight:800; letter-spacing:-0.03em; line-height:1.1; }
+.zone h2 span { color:var(--gl); }
+.zone .head p { max-width:430px; font-size:15px; color:#a7ada9; }
+.shelf { display:grid; grid-template-columns:2fr 1fr; grid-template-rows:1fr 1fr; gap:14px; margin-bottom:14px; }
+.shelf .g:first-child { grid-row:1 / 3; }
+.lib { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+.g { position:relative; display:block; overflow:hidden; border-radius:6px; background:var(--dark2); }
+.g img { width:100%; height:100%; aspect-ratio:16/9; object-fit:cover; transition:transform .35s ease, opacity .35s; opacity:.92; }
+.g:hover img { transform:scale(1.04); opacity:1; }
+.g .cap { position:absolute; left:0; right:0; bottom:0; padding:44px 16px 14px; background:linear-gradient(to top, rgba(10,12,11,.92), rgba(10,12,11,0)); }
+.g h4 { font-size:16px; font-weight:700; color:#fff; }
+.shelf .g:first-child h4 { font-size:26px; letter-spacing:-0.02em; }
+.g p { font-size:12.5px; color:#b9beba; margin-top:2px; }
+.g .play { position:absolute; top:12px; right:12px; font-size:12px; font-weight:700; color:var(--dark); background:var(--gl); padding:5px 10px; border-radius:3px; opacity:0; transform:translateY(-4px); transition:.2s; }
+.g:hover .play, .g:focus-visible .play { opacity:1; transform:none; }
+.g .tag { display:inline-block; font-size:11px; font-weight:700; color:var(--gl); margin-left:8px; vertical-align:3px; }
+.zone .note { margin-top:22px; font-size:13px; color:#7d847f; }
+
+.team { display:grid; grid-template-columns:repeat(2,1fr); gap:20px 28px; }
+.team a { display:grid; grid-template-columns:132px 1fr; gap:16px; align-items:center; }
+.team img { width:100%; aspect-ratio:16/10; object-fit:cover; border-radius:4px; }
+.team h4 { font-size:16px; font-weight:700; }
+.team p { font-size:13.5px; color:var(--sub); }
+.team span { font-size:13px; font-weight:700; color:var(--g); }
+.team a:hover h4 { color:var(--g); }
+
+footer { padding:72px 0 88px; border-top:1px solid var(--line); }
+footer p { font-size:clamp(26px,4vw,36px); font-weight:800; letter-spacing:-0.03em; }
+footer a { display:inline-block; margin-top:10px; font-size:16px; font-weight:600; border-bottom:1.5px solid var(--g); }
+
+@media (max-width:860px) {
+  .sec { grid-template-columns:1fr; gap:24px; padding:56px 0; }
+  .sec h2 { position:static; }
+  .row { grid-template-columns:1fr; gap:14px; }
+  .shelf { grid-template-columns:1fr; grid-template-rows:auto; }
+  .shelf .g:first-child { grid-row:auto; }
+  .lib { grid-template-columns:repeat(2,1fr); }
+  .team { grid-template-columns:1fr; }
+  .top nav a { margin-left:14px; }
+  .g .play { opacity:1; transform:none; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><b>이서연</b><nav><a href="#projects">프로젝트</a><a href="#play">플레이 존</a><a href="#contact">연락처</a></nav></div>
+
+  <div class="hero">
+    <h1>재미는 직접 해봐야<br><span>안다고 믿는</span> 기획자,<br>이서연입니다.</h1>
+    <p class="intro">이화여대 컴퓨터공학과에서 게임 제작 동아리 KING으로 4년째 게임을 만들고 있습니다. 기획서는 <strong>플레이테스트로 검증</strong>하고, 떠오른 재미는 <strong>하루 만에 플레이할 수 있게</strong> 만들어 봅니다.</p>
+    <div class="wins">
+      <div><b>대상</b><span>NHN 게임 x AI 해커톤</span><small>588팀 중 1위, 2026</small></div>
+      <div><b>우수상</b><span>서울 플레이업 AI 게임 챌린지</span><small>353팀 중 3위, 2026</small></div>
+      <div><b>비전상</b><span>KRAFTON KDCW Game Pitch</span><small>2위, 2025</small></div>
+      <div><b>장려상</b><span>Nexon Dream Members</span><small>2024, 2025</small></div>
+    </div>
+  </div>
+
+  <div class="sec" id="projects">
+    <h2>프로젝트<small>기획을 맡은 팀 프로젝트</small></h2>
+    <div id="projList"></div>
+  </div>
+</div>
+
+<div class="zone" id="play"><div class="wrap">
+  <div class="head">
+    <h2>플레이 존<br><span>바로 해보세요.</span></h2>
+    <p>만들고 싶은 재미를 한 줄로 정하고, AI와 함께 하루 이틀 만에 플레이할 수 있게 만든 개인작입니다. 누르면 새 탭에서 바로 실행됩니다.</p>
+  </div>
+  <div class="shelf" id="featList"></div>
+  <div class="lib" id="libList"></div>
+  <p class="note">PC의 Chrome에서 가장 잘 돌아갑니다. 3D 게임은 첫 로딩에 몇 초 걸릴 수 있어요.</p>
+</div></div>
+
+<div class="wrap">
+  <div class="sec" id="team">
+    <h2>팀 빌드<small>팀 프로젝트 실행 파일</small></h2>
+    <div class="team" id="teamList"></div>
+  </div>
+  <footer id="contact">
+    <p>같이 재미있는 게임을<br>만들고 싶습니다.</p>
+    <a href="mailto:kazu809ha@gmail.com">kazu809ha@gmail.com</a>
+  </footer>
+</div>
+
+<script>
+const GH = "https://gammja17.github.io/";
+const projects = [
+  { img:"doppelganger", when:"2026.09, 48시간, 2인", t:"도플갱어", d:"AI 아군 둘을 채팅과 음성으로 지휘하는 실시간 턴제 거점 점령 게임. 지휘관 모드와 무전 시스템, 캐릭터와 규칙을 기획하고 구현했습니다.", win:"NHN 게임 x AI 해커톤 대상", links:[["GitHub","https://github.com/SeoYuGi/SeoYuGi"]] },
+  { img:"buildrangers", when:"2026.05 ~ 09, 5인, 팀장", t:"건축레인저 : 서울", d:"무너진 서울 명소를 친구들과 다시 짓는 3D 협동 건축 게임. 건축, 튜토리얼, 맵 기획을 맡고 GES 2026에서 3일간 시연했습니다.", win:"서울 플레이업 AI 게임 챌린지 우수상", links:[["소개 페이지","https://seoul-zikimi.github.io/build-rangers/"],["플레이 영상","https://youtu.be/qdNikbb2yj0"]] },
+  { img:"bishoujo", when:"2025.01 ~, 9인", t:"잠깐! 미소녀들이 나의 '진짜 얼굴'을 보고도 날 사랑해준다고?", d:"클릭 대신 끄덕임과 고개 젓기로 대답하는 연애 시뮬레이션. 캐릭터 설정과 대사 스크립트, 시스템 기획을 맡았습니다.", win:"KDCW 2025 비전상, NDM 장려상", links:[["플레이 영상","https://youtu.be/aivYL7OcErE"]] },
+  { img:"rkkago", when:"2026.01 ~ 02, 5인", t:"RKKAGO", d:"알이 죽을 때마다 스킬이 바뀌는 2인 멀티 알까기. 스킬 15개를 제안해 11개가 채택됐고, 알 스탯과 물리 규칙을 다시 설계했습니다.", win:"", links:[["플레이 영상","https://youtu.be/Km3clBIjL4Q"]] },
+  { img:"idol", when:"2025.12, 2주, 6인, PM", t:"아이돌 : 성대결절 주의보", d:"직접 마이크로 노래해 무대를 하고 팬과 평판을 관리하는 아이돌 육성 시뮬레이션. PM과 메인 기획을 맡았습니다.", win:"", links:[["시연 영상","https://www.youtube.com/watch?v=0A3nexRDdNc"]] },
+];
+const featured = [
+  { img:"override", t:"OVERRIDE", d:"캡슐을 깨고 기체를 합치는 세로형 머지 디펜스", url:GH+"merge-defense/" },
+  { img:"doodle", t:"Doodle Match", d:"지금 만들고 있는 낙서 공책 퍼즐", url:GH+"doodle-match-play/", tag:"개발 중" },
+  { img:"minwon", t:"민원실 3번 창구", d:"서류를 대조하고 진상을 상대하는 신규 주무관의 2주", url:GH+"Minwon3/" },
+];
+const library = [
+  { img:"beatchef", t:"BEATCHEF", d:"비트에 맞춰 재료를 써는 리듬 액션", url:GH+"BeatChef/" },
+  { img:"claw", t:"인형뽑기 시뮬레이터", d:"희귀품을 뽑아 가게를 꾸리는 타이쿤", url:GH+"claw-tycoon/" },
+  { img:"stoop", t:"STOOP", d:"급강하로 사냥하는 송골매의 삶", url:GH+"stoop/" },
+  { img:"dragonia", t:"DRAGONIA", d:"아기 용에서 고룡까지 자라는 액션 RPG", url:GH+"DragoniaGodot/" },
+  { img:"smokebuster", t:"물대포 단속반", d:"길거리 흡연을 물대포로 단속하는 3D 액션", url:GH+"SmokeBuster/" },
+  { img:"baddies", t:"2 BADDIES", d:"협력하거나 배신하며 별장을 탈출", url:GH+"TwoBaddies/" },
+  { img:"castaway", t:"무인도 버디즈", d:"친구와 같이 살아남는 협동 생존", url:GH+"CastawayBuddies/" },
+  { img:"swordduel", t:"진검승부", d:"마우스로 칼을 휘두르는 1대1 검술 결투", url:GH+"SwordDuel/" },
+];
+const team = [
+  { img:"buildrangers", t:"건축레인저 : 서울", d:"Windows, macOS, Android 빌드", url:"https://seoul-zikimi.github.io/build-rangers/", btn:"다운로드 페이지" },
+  { img:"kumi", t:"KUMI : The Nine Tails", d:"구미호가 연구소를 탈출하는 2D 플랫포머", url:"https://teammygummy.github.io/KUMI_TheNineTails/", btn:"웹에서 플레이" },
+  { img:"muzik", t:"MUZIK IS MY LIFE", d:"밴드의 팬을 성덕으로 만드는 멀티엔딩 시뮬레이션", url:"https://teammuzik.github.io/MuzikIsMyLife-WebBuild/", btn:"웹에서 플레이" },
+  { img:"tetrhythm", t:"Tetrhythm", d:"테트리스와 리듬게임을 합친 게임", url:"https://dasoya.itch.io/tetrhythm", btn:"PC 다운로드" },
+];
+const esc = s => s.replace(/[&<>"]/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" })[c]);
+const ext = 'target="_blank" rel="noopener"';
+const game = g => `<a class="g" href="${g.url}" ${ext}><img src="img/${g.img}.jpg" alt="${esc(g.t)} 플레이 화면" loading="lazy"><span class="play">플레이</span><div class="cap"><h4>${esc(g.t)}${g.tag ? `<span class="tag">${g.tag}</span>` : ""}</h4><p>${esc(g.d)}</p></div></a>`;
+document.getElementById("projList").innerHTML = projects.map(p => `<div class="row"><img src="img/${p.img}.jpg" alt="${esc(p.t)}" loading="lazy"><div>
+  <div class="when">${p.when}</div><h3>${esc(p.t)}</h3><p>${esc(p.d)}</p>
+  ${p.win ? `<div class="win">${esc(p.win)}</div>` : ""}
+  <div class="links">${p.links.map(([n, u]) => `<a href="${u}" ${ext}>${n}</a>`).join("")}</div></div></div>`).join("");
+document.getElementById("featList").innerHTML = featured.map(game).join("");
+document.getElementById("libList").innerHTML = library.map(game).join("");
+document.getElementById("teamList").innerHTML = team.map(g => `<a href="${g.url}" ${ext}><img src="img/${g.img}.jpg" alt="${esc(g.t)}" loading="lazy"><div><h4>${esc(g.t)}</h4><p>${esc(g.d)}</p><span>${g.btn}</span></div></a>`).join("");
+</script>
+</body>
+</html>
