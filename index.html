@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>이서연 게임 기획 포트폴리오</title>
-<meta name="description" content="게임 기획자 이서연의 포트폴리오와, 바로 플레이할 수 있는 개인작 모음">
+<meta name="description" content="콘텐츠 기획자 이서연의 포트폴리오와, 바로 플레이할 수 있는 개인작 모음">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
 :root {
-  --glow:#8fd3ff; --ink:#eaf6ff; --sub:#9ec3e2;
+  --glow:#8fd3ff; --ink:#eaf6ff; --sub:#9ec3e2; --mute:#7095b6;
   --glass:rgba(160,210,255,.08); --edge:rgba(190,228,255,.32);
 }
 * { box-sizing:border-box; margin:0; padding:0; }
@@ -22,8 +22,9 @@ a { color:inherit; text-decoration:none; }
 img { display:block; max-width:100%; }
 button { font:inherit; }
 .en { font-family:Outfit,Pretendard,sans-serif; }
-.small { font-size:12.5px; font-weight:500; line-height:1.55; color:var(--sub); }
+.small { font-size:12.5px; font-weight:500; line-height:1.6; color:var(--sub); }
 .wrap { position:relative; z-index:2; max-width:1040px; margin:0 auto; padding:0 28px; }
+:target { scroll-margin-top:40px; }
 
 /* ocean atmosphere */
 .sea { position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden; }
@@ -50,115 +51,127 @@ button { font:inherit; }
   box-shadow:inset 0 1px 0 rgba(255,255,255,.25), 0 20px 50px -20px rgba(0,10,30,.8); }
 
 /* top + hero */
-.top { display:flex; justify-content:space-between; padding:26px 0; }
-.top nav { display:flex; gap:26px; }
+.top { display:flex; justify-content:center; padding:26px 0; }
+.top nav { display:flex; gap:28px; }
 .top nav a:hover { color:var(--ink); }
-.hero { text-align:center; padding:70px 0 40px; }
-.hero .eyebrow { letter-spacing:.3em; font-size:13px; font-weight:700; color:var(--glow); text-transform:uppercase; }
-.hero h1 { font-size:clamp(64px,13vw,150px); font-weight:800; letter-spacing:-0.04em; line-height:1; margin:14px 0 6px;
-  text-shadow:0 0 40px rgba(143,211,255,.55), 0 0 90px rgba(80,170,255,.35); }
-.hero .lead { font-size:clamp(18px,2.4vw,24px); font-weight:700; letter-spacing:-0.02em; margin-top:18px; }
-.hero .lead span { color:var(--glow); }
-.hero p.small { margin-top:10px; }
-.down { display:inline-grid; place-items:center; width:54px; height:54px; border-radius:50%; margin-top:34px; font-size:20px; transition:transform .2s; }
+.hero { text-align:center; padding:72px 0 44px; }
+.hero h1 { font-size:clamp(46px,7.5vw,84px); font-weight:800; letter-spacing:-0.04em; line-height:1;
+  text-shadow:0 0 34px rgba(143,211,255,.5), 0 0 80px rgba(80,170,255,.3); }
+.hero .lead { font-size:clamp(24px,3.6vw,38px); font-weight:800; letter-spacing:-0.03em; line-height:1.3; margin-top:22px; }
+.hero .lead em { font-style:normal; color:var(--glow); text-shadow:0 0 22px rgba(143,211,255,.55); }
+.hero .desc { max-width:560px; margin:16px auto 0; font-size:15px; font-weight:500; line-height:1.7; color:var(--sub); }
+.hero .desc b { color:var(--ink); font-weight:700; }
+.aff { display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-top:22px; }
+.aff span { font-size:13px; font-weight:600; padding:7px 16px; border-radius:999px; }
+.aff span i { font-style:normal; color:var(--glow); margin-right:6px; }
+.down { display:inline-grid; place-items:center; width:52px; height:52px; border-radius:50%; margin-top:34px; font-size:20px; transition:transform .2s; }
 .down:hover { transform:translateY(4px); }
 
 /* awards panel */
-.label { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+.label { display:flex; justify-content:center; align-items:center; gap:10px; margin-bottom:12px; }
 .tag { font-size:11.5px; font-weight:700; color:#03224a; background:var(--ink); border-radius:999px; padding:2px 10px; }
-.awards { position:relative; overflow:hidden; padding:34px 24px 30px; display:grid; grid-template-columns:repeat(4,1fr); gap:10px; text-align:center; isolation:isolate; }
-.awards::before { content:""; position:absolute; inset:0; background:url(img/doppel_play.jpg) center/cover; opacity:.2; filter:saturate(.5); z-index:-1; }
-.awards .no { font-size:clamp(34px,5vw,52px); font-weight:700; line-height:1; text-shadow:0 0 24px rgba(143,211,255,.5); }
+.awards { position:relative; overflow:hidden; padding:34px 20px 28px; display:grid; grid-template-columns:repeat(4,1fr); gap:12px; text-align:center; isolation:isolate; }
+.awards::before { content:""; position:absolute; inset:0; background:url(img/doppel_play.jpg) center/cover; opacity:.18; filter:saturate(.5); z-index:-1; }
+.awards .no { font-size:clamp(34px,5vw,50px); font-weight:700; line-height:1; text-shadow:0 0 24px rgba(143,211,255,.5); }
 .awards b { display:block; font-size:16px; font-weight:800; margin-top:10px; color:var(--glow); }
 .awards span { display:block; font-size:13px; font-weight:600; margin-top:4px; }
 .awards em { display:block; font-style:normal; font-size:12px; color:var(--sub); margin-top:2px; }
-.edition { text-align:right; margin-top:8px; }
+.awards .game { display:inline-block; margin-top:10px; font-size:12px; font-weight:700; color:var(--ink); padding:3px 11px; border-radius:999px; background:rgba(143,211,255,.14); border:1px solid rgba(143,211,255,.3); transition:background .2s; }
+.awards .game:hover { background:rgba(143,211,255,.3); }
 
 /* section titles */
-.sec { padding:110px 0 30px; }
+.sec { padding:110px 0 20px; }
 .title { text-align:center; margin-bottom:46px; }
-.title h2 { font-size:clamp(40px,6.5vw,68px); font-weight:800; letter-spacing:-0.03em; line-height:1; text-shadow:0 0 34px rgba(143,211,255,.35); }
-.title .sub { font-size:clamp(18px,2.2vw,24px); font-weight:600; margin-top:6px; }
-.title p.small { margin-top:10px; }
+.title h2 { font-size:clamp(40px,6.5vw,66px); font-weight:800; letter-spacing:-0.03em; line-height:1; text-shadow:0 0 34px rgba(143,211,255,.35); }
+.title .sub { font-size:clamp(18px,2.2vw,23px); font-weight:700; margin-top:8px; }
+.title p.small { margin-top:10px; font-size:13.5px; }
 
-/* project cards (stacked glass) */
-.cards { display:grid; grid-template-columns:repeat(3,1fr); gap:34px 28px; }
-.cards.two { grid-template-columns:repeat(2,minmax(0,330px)); justify-content:center; margin-top:34px; }
-.card { position:relative; display:block; }
-.card::before { content:""; position:absolute; inset:0; border-radius:22px; border:1px solid var(--edge); background:rgba(160,210,255,.05); transform:translate(10px,-10px) rotate(4deg); z-index:-1; transition:transform .3s; }
-.card:hover::before { transform:translate(16px,-14px) rotate(7deg); }
-.card .glass { overflow:hidden; padding:10px; transition:transform .3s; }
-.card:hover .glass { transform:translateY(-4px); }
-.card .pic { position:relative; border-radius:14px; overflow:hidden; aspect-ratio:16/11; }
-.card .pic img { width:100%; height:100%; object-fit:cover; }
-.card .pic::after { content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(2,20,45,.85), rgba(2,20,45,0) 60%); }
-.card .over { position:absolute; left:22px; right:22px; bottom:20px; z-index:1; text-align:center; }
-.card h3 { font-size:21px; font-weight:800; letter-spacing:-0.02em; text-shadow:0 2px 14px rgba(0,0,0,.6); }
+/* project cards */
+.cards { display:grid; gap:34px 26px; }
+.cards.big2 { grid-template-columns:repeat(2,1fr); }
+.cards.three { grid-template-columns:repeat(3,1fr); margin-top:40px; }
+.card { position:relative; }
+.card::before { content:""; position:absolute; inset:0; border-radius:22px; border:1px solid var(--edge); background:rgba(160,210,255,.05); transform:translate(10px,-10px) rotate(3deg); z-index:-1; transition:transform .3s; }
+.card:hover::before { transform:translate(15px,-13px) rotate(5deg); }
+.card > .glass { padding:10px 10px 18px; height:100%; transition:transform .3s; }
+.card:hover > .glass { transform:translateY(-4px); }
+.card .pic { position:relative; display:block; border-radius:14px; overflow:hidden; aspect-ratio:16/10; }
+.card .pic img { width:100%; height:100%; object-fit:cover; transition:transform .4s; }
+.card .pic:hover img { transform:scale(1.04); }
+.card .pic::after { content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(2,20,45,.85), rgba(2,20,45,0) 55%); }
+.card .over { position:absolute; left:18px; right:18px; bottom:16px; z-index:1; }
+.card h3 { font-size:22px; font-weight:800; letter-spacing:-0.02em; text-shadow:0 2px 14px rgba(0,0,0,.6); }
+.big2 .card h3 { font-size:27px; }
 .card .win { font-size:12.5px; font-weight:700; color:var(--glow); margin-top:2px; }
-.card .meta { padding:12px 8px 6px; display:flex; justify-content:space-between; align-items:center; }
-.card .num { font-size:13px; font-weight:700; color:var(--glow); }
+.card .num { position:absolute; top:12px; right:14px; z-index:1; font-size:13px; font-weight:700; color:var(--glow); }
+.card .body { padding:14px 8px 0; }
+.card .meta { font-size:12px; font-weight:700; color:var(--glow); }
+.card .intro { font-size:14.5px; font-weight:700; line-height:1.5; margin-top:6px; }
+.card .did { font-size:13px; font-weight:500; line-height:1.6; color:var(--sub); margin-top:4px; }
+.links { display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
+.links a { font-size:12px; font-weight:700; padding:5px 12px; border-radius:999px; background:rgba(143,211,255,.12); border:1px solid rgba(143,211,255,.3); transition:background .2s; }
+.links a:hover { background:rgba(143,211,255,.3); }
+.others { margin-top:56px; }
+.others .head { text-align:center; margin-bottom:18px; }
+.others .head b { font-size:16px; font-weight:800; }
+.olist { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.ocard { display:grid; grid-template-columns:120px 1fr; gap:14px; align-items:center; padding:10px; border-radius:18px; }
+.ocard img { width:100%; aspect-ratio:16/10; object-fit:cover; border-radius:10px; }
+.ocard h4 { font-size:14.5px; font-weight:800; }
+.ocard .links { margin-top:8px; }
 
-/* play zone */
+/* arcade */
 .feat { display:grid; grid-template-columns:1.5fr 1fr; gap:22px; margin-bottom:40px; }
 .big, .mini { position:relative; display:block; overflow:hidden; padding:10px; }
 .big .pic, .mini .pic { border-radius:14px; overflow:hidden; height:100%; }
 .big .pic img, .mini .pic img { width:100%; height:100%; object-fit:cover; transition:transform .5s; }
 .big:hover img, .mini:hover img { transform:scale(1.04); }
-.big { min-height:380px; }
-.big .over, .mini .over { position:absolute; left:10px; right:10px; bottom:10px; padding:60px 22px 20px; border-radius:0 0 14px 14px; background:linear-gradient(to top, rgba(2,18,40,.92), rgba(2,18,40,0)); }
+.big { min-height:390px; }
+.big .over, .mini .over { position:absolute; left:10px; right:10px; bottom:10px; padding:60px 22px 20px; border-radius:0 0 14px 14px; background:linear-gradient(to top, rgba(2,18,40,.95) 35%, rgba(2,18,40,0)); }
 .big h3 { font-size:36px; font-weight:800; letter-spacing:-0.02em; line-height:1; margin:10px 0 6px; }
-.big p { font-size:14px; color:var(--sub); max-width:400px; }
+.big p { font-size:14px; color:var(--ink); max-width:420px; }
+.when { font-size:12px; font-weight:600; color:var(--glow); margin-top:4px; }
 .play { display:inline-block; margin-top:14px; font-size:13px; font-weight:800; color:#03224a; background:var(--ink); border-radius:999px; padding:9px 20px; box-shadow:0 0 24px rgba(143,211,255,.5); }
 .stack { display:grid; grid-template-rows:1fr 1fr; gap:22px; }
-.mini .over { padding:40px 18px 14px; }
+.mini .over { padding:46px 18px 14px; }
 .mini h4 { font-size:18px; font-weight:800; }
+.mini p { font-size:12.5px; color:var(--ink); margin-top:2px; }
 .chips { display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin-bottom:24px; }
 .chips button { cursor:pointer; font-size:12.5px; font-weight:700; color:var(--sub); padding:7px 16px; border-radius:999px; background:var(--glass); border:1px solid var(--edge); transition:.15s; }
 .chips button:hover { color:var(--ink); }
 .chips button.on { color:#03224a; background:var(--ink); }
 .lib { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
-.gcard { display:block; padding:8px; border-radius:18px; transition:transform .2s; }
+.gcard { display:flex; flex-direction:column; padding:8px; border-radius:18px; transition:transform .2s; }
 .gcard:hover { transform:translateY(-5px); }
 .gcard .pic { border-radius:12px; overflow:hidden; aspect-ratio:16/10; }
 .gcard .pic img { width:100%; height:100%; object-fit:cover; }
-.gcard .b { padding:10px 6px 4px; display:flex; justify-content:space-between; align-items:baseline; gap:6px; }
-.gcard h4 { font-size:14.5px; font-weight:700; }
+.gcard .b { padding:10px 6px 6px; }
+.gcard .row { display:flex; justify-content:space-between; align-items:baseline; gap:6px; }
+.gcard h4 { font-size:14.5px; font-weight:800; }
 .gcard .g { font-size:11.5px; font-weight:700; color:var(--glow); white-space:nowrap; }
+.gcard p { font-size:12.5px; line-height:1.5; color:var(--sub); margin-top:4px; }
+.gcard .when { font-size:11.5px; color:var(--mute); }
 .gcard.hide { display:none; }
 .note { text-align:center; margin-top:22px; }
 
-/* team builds (round portraits) */
-.crew { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; text-align:center; }
-.crew a { display:block; }
-.crew .ring { width:100%; max-width:220px; aspect-ratio:16/10; margin:0 auto; border-radius:20px; padding:5px; background:linear-gradient(160deg, rgba(220,242,255,.9), rgba(120,190,255,.25)); box-shadow:0 0 30px rgba(143,211,255,.35); transition:transform .25s; }
-.crew a:hover .ring { transform:scale(1.05); }
-.crew .ring img { width:100%; height:100%; object-fit:cover; border-radius:15px; }
-.crew h4 { font-size:15px; font-weight:800; margin-top:14px; }
-.crew .small { margin-top:2px; }
-.crew .enter { display:inline-block; margin-top:8px; font-size:11.5px; font-weight:700; padding:4px 14px; border-radius:999px; }
-.split { display:flex; justify-content:space-between; margin-bottom:30px; }
-
-/* closing */
-.end { text-align:center; padding:130px 0 70px; }
-.end h2 { font-size:clamp(40px,7vw,72px); font-weight:800; letter-spacing:-0.03em; line-height:1; text-shadow:0 0 34px rgba(143,211,255,.4); }
-.end .sub { font-size:clamp(20px,2.6vw,28px); font-weight:700; margin-top:6px; }
-.end a.mail { display:inline-block; margin-top:22px; font-size:15px; font-weight:700; padding:12px 28px; border-radius:999px; }
-.dots { display:flex; justify-content:center; gap:10px; margin-top:40px; }
-.dots i { width:9px; height:9px; border-radius:50%; background:var(--ink); opacity:.4; }
-.dots i:nth-child(2) { opacity:.9; box-shadow:0 0 12px var(--glow); }
+/* contact */
+.end { text-align:center; padding:120px 0 60px; }
+.end .small { font-size:13px; }
+.end a.mail { display:inline-block; margin-top:14px; font-size:16px; font-weight:700; padding:12px 28px; border-radius:999px; }
+.end .gh { display:block; margin-top:12px; font-size:13px; color:var(--sub); }
 .foot { display:flex; justify-content:space-between; padding:20px 0 34px; border-top:1px solid rgba(190,228,255,.15); }
 
 @media (max-width:860px) {
-  .top nav { display:none; }
+  .top nav { gap:18px; }
   .awards { grid-template-columns:repeat(2,1fr); row-gap:26px; }
-  .cards, .cards.two { grid-template-columns:repeat(2,1fr); }
+  .cards.big2 { grid-template-columns:1fr; }
+  .cards.three, .olist { grid-template-columns:repeat(2,1fr); }
   .feat { grid-template-columns:1fr; }
   .stack { grid-template-rows:none; grid-template-columns:1fr 1fr; }
   .lib { grid-template-columns:repeat(2,1fr); }
-  .crew { grid-template-columns:repeat(2,1fr); row-gap:36px; }
 }
 @media (max-width:540px) {
-  .cards, .cards.two, .stack, .lib { grid-template-columns:1fr; }
+  .cards.three, .olist, .stack, .lib { grid-template-columns:1fr; }
   .card::before { display:none; }
 }
 </style>
@@ -167,62 +180,58 @@ button { font:inherit; }
 <div class="sea" aria-hidden="true"><div class="beam"></div><div class="beam b2"></div><div class="caustic"></div><div id="bubbles"></div></div>
 
 <div class="wrap">
-  <div class="top small"><span>Game Design Portfolio</span><nav><a href="#projects">프로젝트</a><a href="#play">플레이 존</a><a href="#team">팀 빌드</a><a href="#contact">연락처</a></nav><span>2026</span></div>
+  <div class="top small"><nav><a href="#projects">프로젝트</a><a href="#arcade">아케이드</a><a href="#contact">연락처</a></nav></div>
 
   <div class="hero">
-    <div class="eyebrow en">Lee Seoyeon</div>
     <h1>이서연</h1>
-    <div class="lead">재미는 직접 해봐야 <span>안다고 믿는</span> 기획자</div>
-    <p class="small">기획서는 플레이테스트로 검증하고, 떠오른 재미는 하루 만에 플레이할 수 있게 만들어 봅니다.<br>이화여대 컴퓨터공학과, 게임 제작 동아리 KING</p>
+    <div class="lead">재미는 <em>직접 해봐야</em> 안다고 믿는 게임 기획자</div>
+    <p class="desc">스킬, 맵, 퀘스트, 튜토리얼처럼 <b>플레이어가 직접 만지는 콘텐츠</b>를 기획합니다.<br>아이디어는 바로 플레이할 수 있는 빌드로 만들고, 플레이테스트로 다듬습니다.</p>
+    <div class="aff"><span class="glass"><i>학교</i>이화여자대학교 컴퓨터공학과</span><span class="glass"><i>동아리</i>게임 제작 동아리 KING 15기 임원진</span></div>
     <a class="down glass" href="#awards" aria-label="아래로">↓</a>
   </div>
 
   <div id="awards">
     <div class="label small">수상 <span class="tag">Awards</span></div>
     <div class="awards glass">
-      <div><div class="no en">01</div><b>대상</b><span>NHN 게임 x AI 해커톤</span><em>588팀 중 1위, 2026</em></div>
-      <div><div class="no en">02</div><b>우수상</b><span>서울 플레이업 AI 게임 챌린지</span><em>353팀 중 3위, 2026</em></div>
-      <div><div class="no en">03</div><b>비전상</b><span>KRAFTON KDCW Game Pitch</span><em>2위, 2025</em></div>
-      <div><div class="no en">04</div><b>장려상</b><span>Nexon Dream Members</span><em>2024, 2025</em></div>
+      <div><div class="no en">01</div><b>대상</b><span>NHN 게임 x AI 해커톤</span><em>588팀 중 1위, 2026</em><a class="game" href="#p-doppel">도플갱어 ↓</a></div>
+      <div><div class="no en">02</div><b>우수상</b><span>서울 플레이업 AI 게임 챌린지</span><em>353팀 중 3위, 2026</em><a class="game" href="#p-build">건축레인저 : 서울 ↓</a></div>
+      <div><div class="no en">03</div><b>비전상</b><span>KRAFTON KDCW Game Pitch</span><em>2위, 2025</em><a class="game" href="#p-jn">잠깐! 미소녀들이… ↓</a></div>
+      <div><div class="no en">04</div><b>장려상</b><span>Nexon Dream Members</span><em>2024, 2025</em><a class="game" href="#p-jn">잠깐! 미소녀들이… ↓</a><br><a class="game" href="#p-muzik" style="margin-top:6px">MUZIK IS MY LIFE ↓</a></div>
     </div>
-    <div class="edition small">역할 기획, 개발, PM</div>
   </div>
 
   <div class="sec" id="projects">
     <div class="title">
       <h2 class="en">PROJECTS.</h2>
       <div class="sub">기획을 맡은 팀 프로젝트</div>
-      <p class="small">해커톤과 공모전, 동아리에서 팀으로 만든 다섯 개의 게임</p>
+      <p class="small">해커톤과 공모전, 동아리에서 팀으로 만든 게임입니다.<br>카드를 누르면 시연 영상으로 이어집니다.</p>
     </div>
-    <div class="cards" id="cardsA"></div>
-    <div class="cards two" id="cardsB"></div>
+    <div class="cards big2" id="cardsA"></div>
+    <div class="cards three" id="cardsB"></div>
+    <div class="others">
+      <div class="head"><b>그 밖의 팀 프로젝트</b><div class="small">개발, 그래픽으로 참여한 게임</div></div>
+      <div class="olist" id="others"></div>
+    </div>
   </div>
 
-  <div class="sec" id="play">
+  <div class="sec" id="arcade">
     <div class="title">
-      <h2 class="en">PLAY ZONE.</h2>
+      <h2 class="en">ARCADE.</h2>
       <div class="sub">바로 해보는 개인작</div>
-      <p class="small">재미를 한 줄로 정하고, AI와 함께 하루 이틀 만에 만든 게임들. 누르면 새 탭에서 실행됩니다.</p>
+      <p class="small">만들고 싶은 재미를 한 줄로 정하고, AI와 함께 대부분 하루에서 일주일 사이에 만든 게임들입니다.<br>누르면 웹 빌드로 바로 실행됩니다.</p>
     </div>
     <div class="feat" id="feat"></div>
     <div class="chips" id="chips"></div>
     <div class="lib" id="lib"></div>
-    <p class="small note">PC의 Chrome에서 가장 잘 돌아갑니다. 3D 게임은 첫 로딩에 몇 초 걸릴 수 있어요.</p>
-  </div>
-
-  <div class="sec" id="team">
-    <div class="split small"><span>팀 빌드</span><span>2024 ~ 2026</span></div>
-    <div class="crew" id="crew"></div>
+    <p class="small note">PC의 Chrome에서 가장 잘 돌아갑니다. 3D 게임은 첫 로딩에 몇 초 걸릴 수 있습니다.</p>
   </div>
 
   <div class="end" id="contact">
-    <h2 class="en">LET'S DIVE IN.</h2>
-    <div class="sub">같이 만들어요</div>
-    <p class="small" style="margin-top:10px">재미있는 게임을 함께 만들 팀을 찾고 있습니다.</p>
+    <div class="small">연락처</div>
     <a class="mail glass" href="mailto:kazu809ha@gmail.com">kazu809ha@gmail.com</a>
-    <div class="dots"><i></i><i></i><i></i></div>
+    <a class="gh" href="https://github.com/Gammja17" target="_blank" rel="noopener">github.com/Gammja17</a>
   </div>
-  <div class="foot small"><span>© 2026 Lee Seoyeon</span><a href="https://github.com/Gammja17" target="_blank" rel="noopener">github.com/Gammja17</a></div>
+  <div class="foot small"><span>© 2026 Lee Seoyeon</span><span>2026</span></div>
 </div>
 
 <script>
@@ -231,50 +240,68 @@ const ext = 'target="_blank" rel="noopener"';
 const esc = s => s.replace(/[&<>"]/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" })[c]);
 
 const projects = [
-  { img:"doppel_play", t:"도플갱어", win:"NHN 해커톤 대상", meta:"2026, 기획, 개발", url:"https://github.com/SeoYuGi/SeoYuGi" },
-  { img:"buildrangers", t:"건축레인저 : 서울", win:"플레이업 우수상", meta:"2026, 팀장, 기획", url:"https://youtu.be/qdNikbb2yj0" },
-  { img:"bishoujo", t:"잠깐! 미소녀들이…", win:"KDCW 비전상", meta:"2025, 기획, 그래픽", url:"https://youtu.be/aivYL7OcErE" },
-  { img:"rkkago", t:"RKKAGO", win:"NDM 시연회 출품", meta:"2026, 스킬, 시스템 기획", url:"https://youtu.be/Km3clBIjL4Q" },
-  { img:"idol", t:"아이돌 : 성대결절 주의보", win:"2주 만에 완성", meta:"2025, PM, 메인 기획", url:"https://www.youtube.com/watch?v=0A3nexRDdNc" },
+  { id:"p-doppel", img:"doppel_play", t:"도플갱어", win:"NHN 게임 x AI 해커톤 대상", meta:"2026.09, 48시간, 2인, 기획, 개발",
+    intro:"AI 아군 둘을 채팅과 음성으로 지휘하는 실시간 턴제 거점 점령 게임",
+    did:"지휘관 모드와 LLM 무전 시스템, 캐릭터 5종의 역할과 스킬, 판을 비트는 랜덤 규칙을 기획하고 구현했습니다.",
+    main:"https://github.com/SeoYuGi/SeoYuGi", links:[["GitHub","https://github.com/SeoYuGi/SeoYuGi"]] },
+  { id:"p-build", img:"buildrangers", t:"건축레인저 : 서울", win:"서울 플레이업 AI 게임 챌린지 우수상", meta:"2026.05 ~ 09, 5인, 팀장, 기획",
+    intro:"무너진 서울 명소를 1~4인이 함께 다시 짓는 3D 협동 건축 게임",
+    did:"건축과 붕괴 규칙, 튜토리얼, 광통교와 남산타워와 경복궁 맵을 기획하고, 시연 설문으로 튜토리얼을 고쳤습니다.",
+    main:"https://youtu.be/qdNikbb2yj0", links:[["시연 영상","https://youtu.be/qdNikbb2yj0"],["다운로드","https://seoul-zikimi.github.io/build-rangers/"]] },
+  { id:"p-jn", img:"bishoujo", t:"잠깐! 미소녀들이…", win:"KDCW 비전상, NDM 장려상", meta:"2025, 9인, 기획, 그래픽",
+    intro:"클릭 대신 끄덕임과 고개 젓기로 대답하는 연애 시뮬레이션",
+    did:"캐릭터 3명 설정과 두 캐릭터의 대사 전체, 업보와 엔딩 시스템을 기획했습니다.",
+    main:"https://youtu.be/aivYL7OcErE", links:[["시연 영상","https://youtu.be/aivYL7OcErE"]] },
+  { id:"p-rk", img:"rkkago", t:"RKKAGO", win:"NDM 시연회 출품", meta:"2026.01 ~ 02, 5인, 기획",
+    intro:"알이 죽을 때마다 스킬이 바뀌는 2인 멀티 알까기",
+    did:"스킬 15개를 제안해 11개가 채택됐고, 알 스탯과 물리 규칙을 다시 설계했습니다.",
+    main:"https://youtu.be/Km3clBIjL4Q", links:[["시연 영상","https://youtu.be/Km3clBIjL4Q"]] },
+  { id:"p-idol", img:"idol", t:"아이돌 : 성대결절 주의보", win:"2주 만에 완성", meta:"2025.12, 2주, 6인, PM, 기획",
+    intro:"직접 노래해 무대를 하고 팬과 평판을 관리하는 육성 시뮬레이션",
+    did:"PM으로 일정을 관리하고, 스탯과 컴백 사이클, 엔딩 조건을 기획했습니다.",
+    main:"https://www.youtube.com/watch?v=0A3nexRDdNc", links:[["시연 영상","https://www.youtube.com/watch?v=0A3nexRDdNc"]] },
+];
+const others = [
+  { id:"p-muzik", img:"muzik", t:"MUZIK IS MY LIFE", d:"그래픽, 2024 NDM 장려상", links:[["웹 플레이","https://teammuzik.github.io/MuzikIsMyLife-WebBuild/"]] },
+  { id:"p-kumi", img:"kumi", t:"KUMI : The Nine Tails", d:"개발, 몬스터 AI와 맵 기믹", links:[["웹 플레이","https://teammygummy.github.io/KUMI_TheNineTails/"]] },
+  { id:"p-tet", img:"tetrhythm", t:"Tetrhythm", d:"개발, C++로 테트리스 구현", links:[["다운로드","https://dasoya.itch.io/tetrhythm"]] },
 ];
 const featured = [
-  { img:"override", t:"OVERRIDE", d:"캡슐을 깨고 기체를 합치는 세로형 머지 디펜스. 가장 오래 다듬은 개인작입니다.", url:GH+"merge-defense/" },
-  { img:"doodle", t:"Doodle Match", d:"낙서 공책 퍼즐, 개발 중", url:GH+"doodle-match-play/" },
-  { img:"minwon", t:"민원실 3번 창구", d:"서류 대조 공무원 게임", url:GH+"Minwon3/" },
+  { img:"override", t:"OVERRIDE", g:"머지 디펜스", d:"캡슐을 깨서 기체를 모으고, 같은 기체를 합쳐 강해지는 세로형 머지 디펜스", when:"2026.09.26 ~ 10.17", url:GH+"merge-defense/" },
+  { img:"doodle", t:"Doodle Match", g:"퍼즐", d:"낙서 공책 위에서 펼쳐지는 퍼즐, 개발 중", when:"2026.10 ~", url:GH+"doodle-match-play/" },
+  { img:"minwon", t:"민원실 3번 창구", g:"시뮬레이션", d:"서류를 대조하고 진상을 상대하는 신규 주무관의 2주", when:"2026.09.26 ~ 09.28, 3일", url:GH+"Minwon3/" },
 ];
 const library = [
-  { img:"beatchef", t:"BEATCHEF", g:"리듬", url:GH+"BeatChef/" },
-  { img:"claw", t:"인형뽑기 시뮬레이터", g:"경영", url:GH+"claw-tycoon/" },
-  { img:"stoop", t:"STOOP", g:"시뮬레이션", url:GH+"stoop/" },
-  { img:"dragonia", t:"DRAGONIA", g:"액션", url:GH+"DragoniaGodot/" },
-  { img:"smokebuster", t:"물대포 단속반", g:"액션", url:GH+"SmokeBuster/" },
-  { img:"baddies", t:"2 BADDIES", g:"협동", url:GH+"TwoBaddies/" },
-  { img:"castaway", t:"무인도 버디즈", g:"협동", url:GH+"CastawayBuddies/" },
-  { img:"swordduel", t:"진검승부", g:"액션", url:GH+"SwordDuel/" },
-];
-const team = [
-  { img:"buildrangers", t:"건축레인저 : 서울", d:"Windows, macOS, Android", url:"https://seoul-zikimi.github.io/build-rangers/", go:"다운로드" },
-  { img:"kumi", t:"KUMI", d:"2D 플랫포머 액션", url:"https://teammygummy.github.io/KUMI_TheNineTails/", go:"웹 플레이" },
-  { img:"muzik", t:"MUZIK IS MY LIFE", d:"멀티엔딩 시뮬레이션", url:"https://teammuzik.github.io/MuzikIsMyLife-WebBuild/", go:"웹 플레이" },
-  { img:"tetrhythm", t:"Tetrhythm", d:"테트리스와 리듬게임", url:"https://dasoya.itch.io/tetrhythm", go:"다운로드" },
+  { img:"beatchef", t:"BEATCHEF", g:"리듬", d:"곡을 넣으면 스테이지가 생기고, 비트에 맞춰 재료를 써는 리듬 액션", when:"2026.08.09 ~ 08.10, 2일", url:GH+"BeatChef/" },
+  { img:"claw", t:"인형뽑기 시뮬레이터", g:"경영", d:"다른 가게에서 희귀품을 뽑아 오고 내 가게를 꾸리는 타이쿤", when:"2026.09.11 ~ 09.19", url:GH+"claw-tycoon/" },
+  { img:"stoop", t:"STOOP", g:"시뮬레이션", d:"송골매가 되어 급강하로 사냥하고 살아가는 3D 게임", when:"2026.09.25, 1일", url:GH+"stoop/" },
+  { img:"dragonia", t:"DRAGONIA", g:"액션", d:"아기 용으로 태어나 고룡까지 자라는 액션 RPG", when:"2026.09.23 ~ 09.27", url:GH+"DragoniaGodot/" },
+  { img:"smokebuster", t:"물대포 단속반", g:"액션", d:"동네를 돌며 길거리 흡연을 물대포로 단속하는 3D 액션", when:"2026.10.10 ~ 10.13", url:GH+"SmokeBuster/" },
+  { img:"baddies", t:"2 BADDIES", g:"협동", d:"좀도둑과 수배범이 협력하거나 싸우며 별장을 탈출", when:"2026.09.27 ~ 09.28, 2일", url:GH+"TwoBaddies/" },
+  { img:"castaway", t:"무인도 버디즈", g:"협동", d:"친구와 같이 무인도에서 살아남는 로우폴리 협동 생존", when:"2026.09.25, 1일", url:GH+"CastawayBuddies/" },
+  { img:"swordduel", t:"진검승부", g:"액션", d:"마우스로 칼을 휘둘러 쳐내고 막는 1대1 검술 결투", when:"2026.09.26 ~ 10.03", url:GH+"SwordDuel/" },
 ];
 
-const card = (p, i) => `<a class="card" href="${p.url}" ${ext}><div class="glass"><div class="pic"><img src="img/${p.img}.jpg" alt="${esc(p.t)}" loading="lazy">
-  <div class="over"><h3>${esc(p.t)}</h3><div class="win">${esc(p.win)}</div></div></div>
-  <div class="meta small"><span>${esc(p.meta)}</span><span class="num en">0${i + 1}</span></div></div></a>`;
-document.getElementById("cardsA").innerHTML = projects.slice(0, 3).map(card).join("");
-document.getElementById("cardsB").innerHTML = projects.slice(3).map((p, i) => card(p, i + 3)).join("");
+const card = (p, i) => `<div class="card" id="${p.id}"><div class="glass">
+  <a class="pic" href="${p.main}" ${ext}><img src="img/${p.img}.jpg" alt="${esc(p.t)} 플레이 화면" loading="lazy"><span class="num en">0${i + 1}</span>
+  <div class="over"><h3>${esc(p.t)}</h3><div class="win">${esc(p.win)}</div></div></a>
+  <div class="body"><div class="meta">${esc(p.meta)}</div><div class="intro">${esc(p.intro)}</div><div class="did">${esc(p.did)}</div>
+  <div class="links">${p.links.map(([n, u]) => `<a href="${u}" ${ext}>${n} ↗</a>`).join("")}</div></div></div></div>`;
+document.getElementById("cardsA").innerHTML = projects.slice(0, 2).map(card).join("");
+document.getElementById("cardsB").innerHTML = projects.slice(2).map((p, i) => card(p, i + 2)).join("");
+document.getElementById("others").innerHTML = others.map(o => `<div class="ocard glass" id="${o.id}"><img src="img/${o.img}.jpg" alt="${esc(o.t)}" loading="lazy">
+  <div><h4>${esc(o.t)}</h4><div class="small">${esc(o.d)}</div><div class="links">${o.links.map(([n, u]) => `<a href="${u}" ${ext}>${n} ↗</a>`).join("")}</div></div></div>`).join("");
 
 const [f0, ...fs] = featured;
 document.getElementById("feat").innerHTML =
   `<a class="big glass" href="${f0.url}" ${ext}><div class="pic"><img src="img/${f0.img}.jpg" alt="${esc(f0.t)} 플레이 화면"></div>
-   <div class="over"><span class="tag">대표작</span><h3 class="en">${f0.t}</h3><p>${esc(f0.d)}</p><span class="play">▶ 플레이</span></div></a>
+   <div class="over"><span class="tag">${f0.g}</span><h3 class="en">${f0.t}</h3><p>${esc(f0.d)}</p><div class="when">${f0.when}</div><span class="play">▶ 플레이</span></div></a>
    <div class="stack">${fs.map(g => `<a class="mini glass" href="${g.url}" ${ext}><div class="pic"><img src="img/${g.img}.jpg" alt="${esc(g.t)} 플레이 화면" loading="lazy"></div>
-   <div class="over"><h4>${esc(g.t)}</h4><div class="small">${esc(g.d)}</div></div></a>`).join("")}</div>`;
+   <div class="over"><h4>${esc(g.t)}</h4><p>${esc(g.d)}</p><div class="when">${g.g}, ${g.when}</div></div></a>`).join("")}</div>`;
 
 const lib = document.getElementById("lib");
 lib.innerHTML = library.map(g => `<a class="gcard glass" data-g="${g.g}" href="${g.url}" ${ext}><div class="pic"><img src="img/${g.img}.jpg" alt="${esc(g.t)} 플레이 화면" loading="lazy"></div>
-  <div class="b"><h4>${esc(g.t)}</h4><span class="g">${g.g}</span></div></a>`).join("");
+  <div class="b"><div class="row"><h4>${esc(g.t)}</h4><span class="g">${g.g}</span></div><p>${esc(g.d)}</p><div class="when">${g.when}</div></div></a>`).join("");
 const chips = document.getElementById("chips");
 chips.innerHTML = ["전체", ...new Set(library.map(g => g.g))].map((g, i) => `<button type="button" class="${i ? "" : "on"}">${g}</button>`).join("");
 chips.addEventListener("click", e => {
@@ -282,9 +309,6 @@ chips.addEventListener("click", e => {
   [...chips.children].forEach(x => x.classList.toggle("on", x === b));
   [...lib.children].forEach(c => c.classList.toggle("hide", b.textContent !== "전체" && c.dataset.g !== b.textContent));
 });
-
-document.getElementById("crew").innerHTML = team.map(g => `<a href="${g.url}" ${ext}><div class="ring"><img src="img/${g.img}.jpg" alt="${esc(g.t)}" loading="lazy"></div>
-  <h4>${esc(g.t)}</h4><div class="small">${esc(g.d)}</div><span class="enter glass">${g.go}</span></a>`).join("");
 
 // rising bubbles
 const bubbles = document.getElementById("bubbles");
